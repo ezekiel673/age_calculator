@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .message {
+      border: 1px solid var(--L_grey);
+      align-self: center;
+      font-size: 1.45rem;
+      width: 80%;
+      height: 400px;
+      padding: 20px;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      justify-content: center;
+      opacity: 0; /* Start hidden */
+      text-align: center;
+    }
+    #ageMessage {
+      color: var(--Off-black);
+      transform: translateX(-100%); /* Start off-screen left */
+    }
+    #analysisMessage {
+      color: var(--Purple);
+      transform: translateX(100%); /* Start off-screen right */
+    }
+    @keyframes slideInFromLeft {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInFromRight {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @media (width <= 600px) {
+      .message {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <title>Age Analysis</title>
+</head>
+<body>
+  <div class="container age">
+    <div class="message">
+      <h1 id="ageMessage"></h1>
+      <h1 id="analysisMessage"></h1>
+    </div>
+  </div>
+  <script src="age_analysis.js"></script>
+</body>
+</html>

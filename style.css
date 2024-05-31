@@ -1,0 +1,313 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root{
+--Purple: hsl(259, 100%, 65%);
+--L_red: hsl(0, 100%, 67%);
+--White: hsl(0, 0%, 100%);
+--Off-white: hsl(0, 0%, 94%);
+--L_grey: hsl(0, 0%, 86%);
+--Smokey-grey: hsl(0, 1%, 44%);
+--Off-black: hsl(0, 0%, 8%);
+--F-size: 32px;
+}
+
+
+body,html{
+    background: var(--Off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    width: 50%;
+    background: var(--White);
+    gap: 10px;
+    border-radius: 16px 16px 30% 16px;
+    -webkit-border-radius: 16px 16px 30% 16px;
+    -moz-border-radius: 16px 16px 30% 16px;
+    -ms-border-radius: 16px 16px 30% 16px;
+    -o-border-radius: 16px 16px 30% 16px;
+}
+.container > .inputs{
+    display: flex;
+    margin: 50px auto 0 50px;
+    gap: 20px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.input-group:nth-of-type(1) {
+    animation-delay: 0.2s;
+    animation-name: slideInFromLeft;
+}
+
+.input-group:nth-of-type(2) {
+    animation-delay: 0.4s;
+    animation-name: slideInFromRight;
+}
+
+.input-group:nth-of-type(3) {
+    animation-delay: 0.6s;
+    animation-name: slideInFromTop;
+}
+
+.inputs label{
+    text-transform: uppercase;
+    color: var(--Smokey-grey);
+    font-weight: 400;
+
+}
+
+.inputs input{
+    border-style: none;
+    border: 1px solid var(--L_grey);
+    height: 50px;
+    width: 120px;
+    padding-left: 15px;
+    color: var(--Smokey-grey);
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+input:focus-within{
+    border: 1px solid var(--Purple); /* Solid purple border */
+    outline: none; /* Removes the default focus outline */
+    caret-color: var(--Purple);
+}
+
+.inputs p{
+    color: var(--L_red);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+}
+.submit{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    opacity: 0;
+    animation: slideInFromBottom 1s forwards;
+    animation-delay: 0.8s;
+}
+
+.container .submit>hr{
+    width: 80%;
+    height: 1px;
+    border-style: none;
+    border: 1px solid var(--L_grey);
+}
+
+.submit button{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-style: none;
+    background: var(--Purple);
+    cursor: pointer;
+}
+button:hover, button:active{
+    background: var(--Off-black);
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+}
+
+button img {
+    width: 30px;
+    transition: transform 0.5s; /* Smooth transition for rotation */
+}
+
+/* Rotate animation */
+button:active img {
+    animation: rotate 0.5s ease-in-out; /* Apply animation on click */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.container .display{
+    margin: 0px auto 0 50px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.display h1{
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--Off-black);
+}
+
+h1 > span{
+    color: var(--Purple);
+}
+
+@media( 600px<= width <= 800px){
+    .container{
+        width: 80%;
+        overflow: hidden;
+    }
+}
+
+
+@media(width<=600px){
+    .container{
+        width: 95%;
+        height: 500px;
+    }
+
+
+    .container > .inputs{
+        margin: 30px auto 0 30px;
+
+    }
+
+    .inputs input{
+        height: 50px;
+        width: 90px;
+    }
+
+    .inputs p{
+        font-size: 0.5rem;
+    }
+
+    .submit {
+        justify-content: center; /* Center the button horizontally */
+        margin: 30px;
+        position: relative; /* Needed for absolute positioning of the button */
+    }
+
+    .submit hr {
+        position: absolute; /* Position the lines absolutely */
+        display: none;
+    }
+
+    .submit .button {
+        position: relative; /* Relative position to center the button */
+        z-index: 1; /* Ensure the button stays on top */
+    }
+
+    button img {
+        width: 30px;
+    }
+
+    /* Additional CSS to make sure the horizontal lines extend to the sides of the button */
+    .submit:before,
+    .submit:after {
+        content: '';
+        width: calc(50% - 30px); /* Half of the container width minus half of the button width */
+        height: 1px;
+        background-color: var(--L_grey);
+        position: absolute;
+        width: 80%;
+        top: 50%; /* Vertically center the lines */
+    }
+
+    .submit:before {
+        left: 0; /* Align the left line */
+    }
+
+    .submit:after {
+        right: 0; /* Align the right line */
+    }
+
+    .display h1{
+        font-size: 3rem;
+    }
+    .container .display{
+        margin: 0px auto 0 30px;
+    }
+    
+}
