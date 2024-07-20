@@ -45,8 +45,8 @@ This project involves creating a web page that performs age analysis based on us
 
 ### Links
 
-- Live Site URL: [Live Site URL](https://github.com/Ezekiel-Great/age_calculator)
-- Repository URL: [Repository URL](https://ezekiel-great.github.io/age_calculator/)
+- Live Site URL: [Live Site URL](https://ezekiel-great.github.io/age_calculator/)
+- Repository URL: [Repository URL](https://github.com/Ezekiel-Great/age_calculator)
 
 ## My process
 
